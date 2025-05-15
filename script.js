@@ -30,6 +30,18 @@ const menu = document.querySelector(".nav__menu");
 const openMenuBtn = document.querySelector("#open-menu-btn");
 const closeMenuBtn = document.querySelector("#close-menu-btn");
 
+//check whether screen size > 768px
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    menu.style.display = "flex";
+    openMenuBtn.style.display = "none";
+    closeMenuBtn.style.display = "none";
+  } else {
+    menu.style.display = "none";
+    openMenuBtn.style.display = "inline-block";
+    closeMenuBtn.style.display = "none";
+  }
+});
 openMenuBtn.addEventListener('click', () => {
     menu.style.display = "flex";
     closeMenuBtn.style.display = "inline-block";
